@@ -1,3 +1,3 @@
 # MINOR_PROJECT
-Minor Project
-Link to Google Colab NoteBook :  https://colab.research.google.com/drive/1gb5roEg4PkCKkU1SH6k99xtrtqePIdJw?usp=sharing 
+
+Google Collaboratory Link for the Model :  https://colab.research.google.com/drive/1gb5roEg4PkCKkU1SH6k99xtrtqePIdJw?usp=sharing 
