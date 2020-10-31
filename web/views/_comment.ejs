@@ -2,13 +2,26 @@
   <div class="comment-container">
     <%if(locals.user){%>
     <form action="/comments/create" method="POST">
-      <input type="text" name="content" placeholder="comment..." required />
+      <!-- <input type="text" name="content" placeholder="comment..." required /> -->
+      <div>
+        <input
+          class="form-control form-control-lg"
+          type="text"
+          name="content"
+          placeholder="comment..."
+          required
+        />
+      </div>
       <input type="hidden" name="post" value="<%= post._id %>" />
-      <button type="submit">Comment</button>
+      <div class="mt-2">
+        <button class="btn btn-primary" type="submit">Comment</button>
+      </div>
+      <!-- <button type="submit">Comment</button> -->
     </form>
     <%}%>
   </div>
-  <div id="showing-comments">
+
+  <!-- <div id="showing-comments">
     <%for(comment of post.comments){%> <% if(locals.user && locals.user.id ==
     comment.user.id){%>
     <a href="/comments/destroy/<%= comment.id %>" style="color: red">X</a>
@@ -16,5 +29,31 @@
     <h3><%= comment.content %></h3>
     <p>By <% if(comment.user) {%><%= comment.user.name %></p>
     <%}%> <%}%>
+  </div> -->
+
+  <div id="showing-comments" class="media">
+    <!-- <img src="..." class="mr-3" alt="..."> -->
+    <div class="media-body">
+      <!-- <h5 class="mt-0">Media heading</h5> -->
+      <%for(comment of post.comments){%>
+      <li>
+        <%= comment.content %>
+
+        <div class="media mt-3">
+          <!-- <a class="mr-3" href="#">
+              <img src="..." class="mr-3" alt="...">
+            </a> -->
+          <div class="media-body">
+            <!-- <h5 class="mt-0">Media heading</h5> -->
+            <p class="ml-4 mb-4">
+              By <% if(comment.user) {%><%= comment.user.name %>
+            </p>
+            <%}%>
+          </div>
+        </div>
+
+        <%}%>
+      </li>
+    </div>
   </div>
 </main>
